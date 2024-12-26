@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Ruben De Gamer - 404 Error</title>
+    <link rel="icon" href="Images/Logo no background.png">
+    <link rel="stylesheet" type="text/css" href="_style.css"/>
+</head>
+<body>
+    <div id="topmenu"></div>
+    <script>
+        fetch("topmenu.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("topmenu").innerHTML = data;
+            });
+    </script>
+    <div class="extra_space">
+        <br>
+        <h1 class="main_title_text_h1">404 - Pagina Niet Gevonden</h1>
+        <br><br>
+        <p class="main_title_area_text">De pagina die je zoekt, kan niet gevonden worden. Deze is misschien verwijderd of heeft nooit bestaan.</p>
+        <p class="main_title_area_text">Keer terug naar de <a href="index.html">homepage</a> of neem <a href="contact.html">contact</a> op als je denkt dat dit een fout is.</p>
+    </div>
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

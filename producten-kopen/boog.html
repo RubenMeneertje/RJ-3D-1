@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Ruben De Gamer - Visitekaartjes Houder</title>
+    <link rel="icon" href="../Images/Logo no background.png">
+    <link rel="stylesheet" type="text/css" href="../_style.css"/>
+    <style>
+        .project img {
+            max-height: 400px;
+            max-width: 400px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topmenu">
+        <div>
+            <img src="../Images/Logo no background.png" width="60" height="60" alt="Ruben De Gamer Logo">
+        </div>
+        <div>
+            <a href="../index.html" class="link_button">Home</a>
+            <a href="../contact.html" class="link_button">Contact</a>
+            <a href="../menu.html" class="link_button">Menu</a>
+        </div>
+    </div>
+    <div class="extra_space">
+        <p class="toplinks"><a href="../3d-projecten.html">3D Projecten</a> > Boog</p>
+        <div class="project">
+            <img src="../3d-projecten/Images/Boog.png" alt="Project Afbeelding">
+            <h2>Boog</h2>
+            <p>Een boog zonder pijlen, want die maak ik van lange satéprikkers met een diameter van ongeveer 3 mm.<br>En die schiet ik met een klein rubberen elastiekje.</p>
+            <table>
+                <tr>
+                    <td style="padding-right: 20px;">Lengte=</td>
+                    <td>38 mm</td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 20px;">Breedte=</td>
+                    <td>80 mm</td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 20px;">Hoogte=</td>
+                    <td>5,5 mm</td>
+                </tr>
+            </table>
+            <br>
+            <a href="Downloads/Bow.stl" class="btn">Download</a>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+        fetch("../footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

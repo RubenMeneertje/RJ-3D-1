@@ -1,0 +1,55 @@
+<html lang="nl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>RJ-3D - Contact</title>
+    <link rel="icon" href="Images/Logo no background.png">
+    <link rel="stylesheet" type="text/css" href="_style.css">
+</head>
+<body>
+    <div id="topmenu"></div>
+    <script>
+        fetch("topmenu.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("topmenu").innerHTML = data;
+            });
+    </script>
+    <div class="extra_space">
+        <br>
+        <h1 class="main_title_text_h1">Contact</h1>
+        <section>
+            <br><br>
+            <p class="main_title_simple_text">E-Mail: "<a href="mailto:rubendegamer.rj@gmail.com" target="_blank">rubendegamer.rj@gmail.com</a>"</p>
+        </section>
+        <br><br>
+        <section>
+            <p class="main_title_simple_text">Of je kunt hier een kort bericht sturen:</p>
+            <br><br><br>
+            <form action="https://formspree.io/f/myzzkjll" method="POST" class="main_title_text_table">
+                <label>Volledige Naam (optioneel):</label>
+                <br>
+                <input type="" name="name" id="Name" style="width: 320px;">
+                <br><br>
+                <label>E-mail (optioneel):</label>
+                <br>
+                <input type="email" name="Email" id="email" style="width: 320px;">
+                <br><br>
+                <label>Bericht (verplicht):</label>
+                <br>
+                <textarea name="message" id="Message" style="width: 320px; height: 100px;" required=""></textarea>
+                <br><br>
+                <input type="submit" value="Versturen">
+                <input type="hidden" name="_subject" value="Nieuw bericht via contactformulier!">
+            </form>
+        </section>
+    </div>
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>RJ-3D - Home</title>
+    <link rel="icon" href="Images/Logo no background.png">
+    <link rel="stylesheet" type="text/css" href="_style.css"/>
+</head>
+<body>
+    <div id="topmenu"></div>
+    <script>
+        fetch("topmenu.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("topmenu").innerHTML = data;
+            });
+    </script>
+    <div class="extra_space">
+        <br>
+        <h1 class="main_title_text_h1">RJ-3D</h1>
+        <br><br><br>
+        <div class="main_title_area_text">
+            <p>Bij RJ-3D kunt u verschillende dingen bestellen<br>van kabelbinders en telefoonhouders tot 3D QR Codes<br>en gepersonaliseerde producten.</p>
+            <P>Als u even een kijkje wilt nemen in de webshop<br>kunt u <a href="webshop.html">hier</a> klikken</P>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

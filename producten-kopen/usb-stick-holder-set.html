@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Ruben De Gamer - USB Stick Houder Set</title>
+    <link rel="icon" href="../Images/Logo no background.png">
+    <link rel="stylesheet" type="text/css" href="../_style.css"/>
+    <style>
+        .project img {
+            max-height: 400px;
+            max-width: 400px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .project {
+            text-align: center;
+        }
+    </style>
+    <script>
+        const images = ["Images/USB Stick Houder Set.jpeg", "Images/USB Stick Holder.png", "Images/USB Stick Holder Mini.png", "Images/SD Card holder.png"];
+        let current_img_number = 0;
+
+        function show_img(index) {
+            const imageElement = document.getElementById("img_display");
+            imageElement.src = images[index];
+        }
+
+        function img_next() {
+            current_img_number = (current_img_number + 1) % images.length;
+            show_img(current_img_number);
+        }
+
+        function img_prev() {
+            current_img_number = (current_img_number - 1 + images.length) % images.length;
+            show_img(current_img_number);
+        }
+
+        const basic_price = 6;
+
+        function updateTotal() {
+            const color_select = document.getElementById("color");
+            const color_selected_option = color_select.options[color_select.selectedIndex];
+            const color_extra_price = parseFloat(color_selected_option.getAttribute("data-price")) || 0;
+
+            const logo_select = document.getElementById("logo_optie");
+            const logo_selected_option = logo_select.options[logo_select.selectedIndex];
+            const logo_extra_price = parseFloat(logo_selected_option.getAttribute("data-price")) || 0;
+
+            const quantity = parseInt(document.getElementById("quantity").value) || 1;
+
+            const totalprice = (basic_price + color_extra_price + logo_extra_price) * quantity;
+
+            document.getElementById("total_price").textContent = totalprice.toFixed(2);
+        }
+
+
+        document.addEventListener("DOMContentLoaded", updateTotal);
+
+
+        function updateHiddenFields() {
+            const color_select = document.getElementById("color");
+            const color_selected_option = color_select.options[color_select.selectedIndex];
+
+            const logo_select = document.getElementById("logo_optie");
+            const logo_selected_option = logo_select.options[logo_select.selectedIndex];
+
+            const quantity = document.getElementById("quantity").value;
+
+            const total_price = document.getElementById("total_price").textContent;
+
+            // Vul verborgen velden met de juiste waarden
+            document.getElementById("hidden_color").value = color_selected_option.value; // Waarde van kleur
+            document.getElementById("hidden_logo").value = logo_selected_option.value;  // Waarde van logo
+            document.getElementById("hidden_quantity").value = quantity; // Aantal
+            document.getElementById("hidden_total_price").value = total_price; // Totale prijs
+        }
+
+        document.getElementById("color").addEventListener("change", updateHiddenFields);
+        document.getElementById("logo_optie").addEventListener("change", updateHiddenFields);
+
+        document.addEventListener("DOMContentLoaded", updateHiddenFields);
+    </script>
+</head>
+<body>
+    <div class="topmenu">
+        <div>
+            <img src="../Images/Logo no background.png" width="60" height="60" alt="Ruben De Gamer Logo">
+        </div>
+        <div>
+            <a href="../index.html" class="link_button">Home</a>
+            <a href="../contact.html" class="link_button">Contact</a>
+            <a href="../menu.html" class="link_button">Menu</a>
+        </div>
+    </div>
+    <div class="extra_space">
+        <p></p>
+        <p class="toplinks"><a href="../producten-kopen.html">Producten Kopen</a> > USB Stick Houder Set</p>
+        <div class="project">
+            <br>
+            <img src="Images/USB Stick Houder Set.jpeg" alt="Project Afbeelding" id="img_display" style="border: 5px solid green; margin-bottom: 0px;">
+            <br>
+            <img src="Images/prev arrow.png" alt="Pijl vorige" class="img_prev_next_buttons" onclick="img_prev()">
+            <img src="Images/next arrow.png" alt="Pijl volgende" class="img_prev_next_buttons" onclick="img_next()">
+            <br><br><br>
+            <h2 class="products_title_text">USB Stick Houder Set</h2>
+            <br><br>
+            <h2 class="price_products">Vanaf €5</h2>
+            <p class="main_title_area_text">Dit is een koptelefoon houder die bestaat uit 3 onderdelen:<br>de klem, de schoef die de klem op zijn plek houdt en het haakje waar de headset (koptelefoon) aan wordt opgehangen.</p>
+            <br><br>
+            <div class="main_title_text_table">
+            <h2>Product Aanvragen</h2>
+            <p>Totaal: €<span id="total_price">5,00</span></p>
+            <p class="main_title_area_text">Opties:</p>
+            <img class="color_choices_selected" src="Images/_Donkergrijs.png" alt="Kleur donkergrijs">
+            <img class="color_choices" src="Images/_Lichtgrijs.png" alt="Kleur lichtgrijs">
+            <img class="color_choices" src="Images/_Wit.png" alt="Kleur wit">
+            <img class="color_choices" src="Images/_Zwart.png" alt="Kleur zwart">
+            <img class="color_choices" src="Images/_Rood.png" alt="Kleur rood">
+            <img class="color_choices" src="Images/_Blauw.png" alt="Kleur blauw">
+            <img class="color_choices" src="Images/_Groen.png" alt="Kleur groen">
+            <br>
+            <p>Kleur:
+                <select name="Kleur" id="color" onchange="updateTotal()">
+                    <option value="donkergrijs" data-price="0">Donkergrijs (+ €0)</option>
+                    <option value="lichtgrijs" data-price="2">Lichtgrijs (+ €2)</option>
+                    <option value="wit" data-price="2">Wit (+ €2)</option>
+                    <option value="zwart" data-price="2">Zwart (+ €2)</option>
+                    <option value="rood" data-price="3">Rood (+ €3)</option>
+                    <option value="blauw" data-price="3">Blauw (+ €3)</option>
+                    <option value="groen" data-price="4">Groen (+ €4)</option>
+                    <option value="groen" data-price="0">Anders (+ €?)</option>
+                </select>
+            </p>
+            <p>Logo:
+                <select name="Logo Optie" id="logo_optie" onchange="updateTotal()">
+                    <option value="rj_logo" data-price="0">Met RJ Logo (+ €0)</option>
+                    <option value="no_logo" data-price="5">Zonder Logo (+ €5)</option>
+                    <option value="custom_logo" data-price="10">Eigen Logo (+ €10)</option>
+                </select>
+            </p>
+            <p>Aantal: <input type="number" id="quantity" name="Aantal" value="1" min="1" style="max-width: 30px;" onchange="updateTotal()"></p>
+            <form action="https://formspree.io/f/xbljlqkw" method="POST" class="main_title_text_table" onsubmit="updateHiddenFields()">
+                <br>
+                <label>Volledige Naam (Optioneel):</label>
+                <br>
+                <input type="" name="name" id="Name" style="width: 320px;">
+                <br><br>
+                <label>E-mail (Verplicht):</label>
+                <br>
+                <input type="email" name="Email" id="email" style="width: 320px;" required>
+                <br><br>
+                <label>Bericht (Optioneel):</label>
+                <br>
+                <textarea name="message" id="Message" style="width: 320px; height: 100px;"></textarea>
+                <br><br>
+                <input type="submit" value="Versturen">
+                <input type="hidden" name="_subject" value="Nieuw bericht via contactformulier!">
+
+                <input type="hidden" name="Kleur" id="hidden_color">
+                <input type="hidden" name="Logo" id="hidden_logo">
+                <input type="hidden" name="Aantal" id="hidden_quantity">
+                <input type="hidden" name="Totaalprijs" id="hidden_total_price">
+            </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+        fetch("../footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+
