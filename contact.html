@@ -1,8 +1,9 @@
-<html lang="nl"><head>
+<!DOCTYPE html>
+<html lang="nl">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>RJ-3D - Contact</title>
-    <link rel="icon" href="Images/Logo no background.png">
+    <link rel="icon" href="Images/Logo 2 Round.png">
     <link rel="stylesheet" type="text/css" href="_style.css">
 </head>
 <body>
@@ -15,28 +16,43 @@
             });
     </script>
     <div class="extra_space">
+        <noscript>
+            <p class="main_title_area_text" style="background-color: red; color: yellow;"><b>JavaScript is uitgeschakeld op uw browser. Hierdoor zijn veel funties onbruikbaar op deze website. Zet a.u.b. JavaScript weer aan voor de beste ervaring.</b></p>
+        </noscript>
         <br>
         <h1 class="main_title_text_h1">Contact</h1>
         <section>
             <br><br>
-            <p class="main_title_simple_text">E-Mail: "<a href="mailto:rubendegamer.rj@gmail.com" target="_blank">rubendegamer.rj@gmail.com</a>"</p>
-        </section>
-        <br><br>
-        <section>
-            <p class="main_title_simple_text">Of je kunt hier een kort bericht sturen:</p>
+            <p class="main_title_simple_text">Voor contact kunt u een email sturen.</p>
             <br><br><br>
-            <form action="https://formspree.io/f/myzzkjll" method="POST" class="main_title_text_table">
-                <label>Volledige Naam (optioneel):</label>
+            <p class="main_title_simple_text">E-Mail: "<a href="mailto:rj3d.nl@gmail.com" target="_blank">rj3d.nl@gmail.com</a>"</p>
+        </section>
+        <br><br><br>
+        <section>
+            <p class="main_title_simple_text">Of u kunt hier een kort bericht sturen:</p>
+            <br><br><br>
+            <form action="https://formspree.io/f/myzzkjll" method="POST" class="main_title_text_table" style="max-width: 330px; padding: 20px;">
+                <label>Volledige Naam:</label>
                 <br>
-                <input type="" name="name" id="Name" style="width: 320px;">
+                <input type="" name="name" id="Name" style="width: 320px;" required>
                 <br><br>
-                <label>E-mail (optioneel):</label>
+                <label>E-mail:</label>
                 <br>
-                <input type="email" name="Email" id="email" style="width: 320px;">
+                <input type="email" name="Email" id="email" style="width: 320px;" required>
                 <br><br>
-                <label>Bericht (verplicht):</label>
+                <label>Bericht:</label>
                 <br>
-                <textarea name="message" id="Message" style="width: 320px; height: 100px;" required=""></textarea>
+                <textarea name="message" id="Message" style="width: 320px; height: 100px;" required></textarea>
+                <br><br>
+                <label>Geslacht:</label>
+                <br>
+                <fieldset style="border: 0px;">
+                    <input type="radio" name="geslacht" id="geslacht_text1" style="cursor: pointer;" value="Man" required>
+                    <label for="geslacht_text1" style="cursor: pointer;">Man</label>
+                    <br>
+                    <input type="radio" name="geslacht" id="geslacht_text2" style="cursor: pointer;" value="Vrouw" required>
+                    <label for="geslacht_text2" style="cursor: pointer;">Vrouw</label>
+                </fieldset>
                 <br><br>
                 <input type="submit" value="Versturen">
                 <input type="hidden" name="_subject" value="Nieuw bericht via contactformulier!">
